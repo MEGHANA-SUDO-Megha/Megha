@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-m-around_medium">
+        <lightning-input label="contact Search" value={searchTerm} onchange={handleSearchChange}></lightning-input>
+        <lightning-button label="Search" variant="brand" onclick={handleSearch}></lightning-button>
+        <ul class="slds-m-top_medium">
+            <template for:each={searchResults} for:item="contact">
+                <li key={contact.Id}>{contact.FirstName}{contact.LastName}</li>
+            </template>
+        </ul>
+    </div>
+</template>
